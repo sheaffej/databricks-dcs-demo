@@ -1,4 +1,4 @@
-FROM databricksruntime/minimal:latest
+FROM databricksruntime/python-virtualenv:latest
 
 
 # Installs python 2.7 and virtualenv for Spark and Notebooks
@@ -15,8 +15,7 @@ FROM databricksruntime/minimal:latest
 # These python libraries are used by Databricks notebooks and the Python REPL
 # You do not need to install pyspark - it is injected when the cluster is launched
 RUN /databricks/python3/bin/pip install \
-  six ipython numpy pandas pyarrow matplotlib \
-  jinja2 graphviz pydotplus shap folium keras tensorflow
+	graphviz pydotplus folium keras tensorflow
 
 
 # Specifies where Spark will look for the python process
