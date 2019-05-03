@@ -1,15 +1,15 @@
 FROM databricksruntime/python-virtualenv:latest
 
+# Add required OS packages
 RUN apt-get update \
-  && apt-get install -y \
- 	python3-dev \
- 	build-essential \
- 	graphviz \
-  && apt-get clean \
-  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+	&& apt-get install -y \
+ 		python3-dev \
+ 		build-essential \
+ 		graphviz \
+	&& apt-get clean \
+	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-# These python libraries are used by Databricks notebooks and the Python REPL
-# You do not need to install pyspark - it is injected when the cluster is launched
+# Add required Python packages
 RUN /databricks/python3/bin/pip install \
 	graphviz \
 	pydotplus \
