@@ -1,3 +1,5 @@
+# Recommended base images are located at:
+# https://github.com/databricks/containers/tree/master/ubuntu
 FROM databricksruntime/python-virtualenv:latest
 
 # Add required OS packages
